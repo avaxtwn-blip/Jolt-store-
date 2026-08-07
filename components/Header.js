@@ -2,16 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-
-// Category links currently just close the drawer and go home — category
-// filtering itself will be wired up in a later step, same as cart/login.
-const CATEGORIES = [
-  'Anime Custom Apparel',
-  "Men's T-Shirts & Shirts",
-  'Winter Collection (Hoodies & Jackets)',
-  'Casual Bottoms & Pants',
-  'Accessories'
-];
+import { CATEGORIES } from '@/lib/categories';
 
 function comingSoon(feature) {
   // Placeholder until the real feature (cart, login, search) is built.
@@ -85,7 +76,11 @@ export default function Header() {
             {categoriesOpen && (
               <div className="drawer-submenu">
                 {CATEGORIES.map((cat) => (
-                  <Link key={cat} href="/" onClick={() => setDrawerOpen(false)}>
+                  <Link
+                    key={cat}
+                    href={`/?category=${encodeURIComponent(cat)}`}
+                    onClick={() => setDrawerOpen(false)}
+                  >
                     {cat}
                   </Link>
                 ))}
@@ -114,4 +109,4 @@ export default function Header() {
       </div>
     </>
   );
-              }
+  }

@@ -307,3 +307,20 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 720px) {
   .foot-grid { grid-template-columns: 1fr 1fr; }
 }
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.clear-filter-btn {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.clear-filter-btn:hover { background: var(--fog); }

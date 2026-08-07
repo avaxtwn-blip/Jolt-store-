@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CATEGORIES } from '@/lib/categories';
 
 export default function Footer() {
   return (
@@ -12,11 +13,11 @@ export default function Footer() {
         <div>
           <h4>Categories</h4>
           <ul>
-            <li><Link href="/">Anime Custom Apparel</Link></li>
-            <li><Link href="/">Men&apos;s T-Shirts &amp; Shirts</Link></li>
-            <li><Link href="/">Winter Collection (Hoodies &amp; Jackets)</Link></li>
-            <li><Link href="/">Casual Bottoms &amp; Pants</Link></li>
-            <li><Link href="/">Accessories</Link></li>
+            {CATEGORIES.map((cat) => (
+              <li key={cat}>
+                <Link href={`/?category=${encodeURIComponent(cat)}`}>{cat}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -46,4 +47,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-    }
+            }

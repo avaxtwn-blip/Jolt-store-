@@ -1,7 +1,7 @@
 import { getAllProducts, getProductById } from '@/lib/products';
 import { notFound } from 'next/navigation';
 
-export const revalidate = 3600; // regenerate each product page at most once an hour
+export const revalidate = 60; // regenerate each product page at most once a minute
 
 // Tells Next.js which product pages to build in advance, so every product
 // gets a real, pre-rendered HTML page at build time — this is the part that

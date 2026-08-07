@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getAllProducts } from '@/lib/products';
 
-export const revalidate = 3600; // rebuild this page at most once an hour
+export const revalidate = 60; // rebuild this page at most once a minute
 
 export default async function HomePage() {
   const products = await getAllProducts();
